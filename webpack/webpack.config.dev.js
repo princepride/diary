@@ -23,6 +23,7 @@ module.exports = merge(common, {
       logging: 'error',
     },
     hot: true,
+    writeToDisk: true,
   },
   plugins: [
     new Webpack.DefinePlugin({
