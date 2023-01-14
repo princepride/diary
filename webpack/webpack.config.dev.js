@@ -13,6 +13,11 @@ module.exports = merge(common, {
   output: {
     chunkFilename: 'js/[name].chunk.js',
   },
+  resolve: {
+    alias: {
+      jquery: "jquery/src/jquery",
+    }
+  },
   devServer: {
     client: {
       logging: 'error',
