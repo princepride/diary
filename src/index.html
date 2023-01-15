@@ -21,7 +21,7 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+      <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2">
         <div class="content">
           <div class="header">Diary</div>
           <div class="form-group"><label>Date</label>
@@ -66,15 +66,20 @@
               let html = converter.makeHtml(mdText);
               // Insert HTML into diary container
               diaryContainer.innerHTML = html;
-            });
-            setTimeout(() =>{
               let imgs = document.querySelectorAll("img");
-            for(let i=0; i<imgs.length; i++) {
-              console.log(imgs[i]);
+              for(let i=0; i<imgs.length; i++) {
                 imgs[i].classList.add("col-lg-10");
                 imgs[i].classList.add("offset-lg-1");
             }
-            },500);
+            });
+            //setTimeout(() =>{
+            //  let imgs = document.querySelectorAll("img");
+            //for(let i=0; i<imgs.length; i++) {
+            //  console.log(imgs[i]);
+            //    imgs[i].classList.add("col-lg-10");
+            //    imgs[i].classList.add("offset-lg-1");
+            //}
+            //},500);
             
         });
     }
