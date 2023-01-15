@@ -41,9 +41,10 @@
     } else {
       // if desktop device, use DateTimePicker
       $("#datepicker").datetimepicker({
+        defaultDate: new Date(),
         useCurrent: false,
         format: "DD-MM-YYYY",
-        showTodayButton: true,
+        showTodayButton: false,
         maxDate: new Date(),
         icons: {
           next: "fa fa-chevron-right",
@@ -82,6 +83,21 @@
             //},500);
             
         });
+        let diaryContainer = document.getElementById("diary-container");
+        let converter = new showdown.Converter();
+        fetch("./"+document.querySelector(".form-control").value+".md")
+            .then(response => response.text())
+            .then(mdText => {
+              // Convert .md to HTML
+              let html = converter.makeHtml(mdText);
+              // Insert HTML into diary container
+              diaryContainer.innerHTML = html;
+              let imgs = document.querySelectorAll("img");
+              for(let i=0; i<imgs.length; i++) {
+                imgs[i].classList.add("col-lg-10");
+                imgs[i].classList.add("offset-lg-1");
+            }
+            });
     }
 
   </script>
