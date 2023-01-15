@@ -59,7 +59,7 @@
           //console.log(formControl.value);
           formControl.addEventListener('change', () => {console.log(formControl.textContent);});
           // Load diary content from .md file
-          fetch("./diaryReadme/"+filename+".md")
+          fetch("./"+filename+".md")
             .then(response => response.text())
             .then(mdText => {
               // Convert .md to HTML
@@ -67,6 +67,15 @@
               // Insert HTML into diary container
               diaryContainer.innerHTML = html;
             });
+            setTimeout(() =>{
+              let imgs = document.querySelectorAll("img");
+            for(let i=0; i<imgs.length; i++) {
+              console.log(imgs[i]);
+                imgs[i].classList.add("col-lg-10");
+                imgs[i].classList.add("offset-lg-1");
+            }
+            },500);
+            
         });
     }
 

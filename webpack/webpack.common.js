@@ -21,7 +21,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        { from: Path.resolve(__dirname, '../public/diaryReadme/image'), to: 'image' },
+        //{ from: Path.resolve(__dirname, '../public/diaryReadme/image'), to: 'image' },
         { from: Path.resolve(__dirname, '../public'), to: '' },
       ],
     }),
