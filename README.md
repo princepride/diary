@@ -1,3 +1,3 @@
 # Diary
 
-A Diary program to record your experience.
+A Diary program to record your own story.
